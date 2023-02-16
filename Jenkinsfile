@@ -5,27 +5,29 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                  echo "This is in build stage"
                sh 'g++ intro.cpp -o intro'
-               echo "This is my first step"
+             
             }
         }
         
     
         stage('Test') {
             steps{
+                echo "This is in test stage"
                 sh './intro'
-                echo "This is my Test step"
+                
             }
         }
         stage('Deploy') {
             steps {
-              sh 'echo "This is my Deploy step"'
+              sh 'echo "This is in Deploy stage"'
             }
         }
     }
     post{
         failure {
-                echo 'only when the Pipeline is currently in a "failed" state run, usually expressed in the Web UI with the red indicator.'
+                echo 'Pipeline Failed'
         }
     }
     
