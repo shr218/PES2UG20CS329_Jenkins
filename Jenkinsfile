@@ -13,7 +13,8 @@ pipeline {
     
         stage('Test') {
             steps{
-            sh 'echo "This is my Test step"'
+                sh './intro'
+                echo "This is my Test step"
             }
         }
         stage('Deploy') {
