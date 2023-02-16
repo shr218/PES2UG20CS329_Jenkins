@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                  echo "This is in build stage"
-               sh 'g++ intro.cpp -o intro'
+                  echosss "This is in build stage"
+                  sh 'g++ intro.cpp -o intro'
              
             }
         }
