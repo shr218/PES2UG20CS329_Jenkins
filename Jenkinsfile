@@ -23,6 +23,13 @@ pipeline {
             }
         }
     }
+    try {
+        sh 'echo "might fail"'
+    }
+    catch (err) {
+        echo "Caught: ${err}"
+        currentBuild.result = 'FAILURE'
+    }
     
     
 }
