@@ -23,13 +23,12 @@ pipeline {
             }
         }
     }
-    try {
-        sh 'echo "might fail"'
+    post{
+        failure {
+                echo 'only when the Pipeline is currently in a "failed" state run, usually expressed in the Web UI with the red indicator.'
+        }
     }
-    catch (err) {
-        echo "Caught: ${err}"
-        currentBuild.result = 'FAILURE'
-    }
+    
     
     
 }
